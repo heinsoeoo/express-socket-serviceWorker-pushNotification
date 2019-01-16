@@ -1,0 +1,65 @@
+//- Login Modal
+div.modal#loginModal
+    div.modal-background
+    div.modal-card
+    div.modal-card-head
+        p.modal-card-title Login Form
+        button.delete(aira-label='close')
+    div.modal-card-body
+        form(action='/login', method='post')#loginForm
+        div.field
+            label.label Username
+            div.control
+            input.input.submit-input(
+                name='username',
+                type='text',
+                placeholder='Enter your username'
+            )
+        div.field
+            label.label Password
+            div.control
+            input.input.submit-input(
+                name='password',
+                type='password',
+                placeholder='Enter your password'
+            )
+    div.modal-card-foot
+        button.button.is-link.submit-btn(data-target='loginForm',type="submit") Login
+        button.button.close Cancel
+
+//- Register Modal
+div.modal#registerModal
+    div.modal-background
+    div.modal-card
+    div.modal-card-head
+        p.modal-card-title Register Form
+        button.delete(aira-label='close')
+    div.modal-card-body
+        form(action='/register',method='post')#regForm
+        div.field
+            label.label Username
+            div.control
+            input.input.submit-input(
+                name="username",
+                type='text',
+                placeholder='Enter your username'
+            )
+        div.field
+            label.label Password
+            div.control
+            input.input.submit-input(
+                name="password",
+                type='password',
+                placeholder='Enter your password'
+            )
+        div.field
+            label.label Confirm Password
+            div.control
+            input.input.submit-input(
+                name="confPassword",
+                type='password',
+                placeholder='Confirm your password'
+            )
+    div.modal-card-foot
+        button.button.is-link.submit-btn(data-target='regForm') Register
+        button.button.close Cancel

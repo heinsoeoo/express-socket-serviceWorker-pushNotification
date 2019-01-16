@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    h1.title= title
+
+    ul
+        each book in list
+            li 
+                a(href=book.url) #{book.title}
+                |   (#{book.author.name})
+                | 
+                a(href='/catalog/book/edit')
+                    ion-icon(name='brush')
+        else
+            li There are no books.

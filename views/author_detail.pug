@@ -1,0 +1,19 @@
+extends layout
+
+block content
+    h1.title Author: #{author.name}
+
+    p #[strong Date of birth:] #{author.date_of_birth_formatted}
+    p #[strong Date of death:] #{author.date_of_death_formatted}
+    p #[strong Lifespan:] #{author.lifespan}
+
+    div.section
+        p.title.is-4 Books
+
+        dl
+            each value in author_books
+                dt
+                    a(href=value.url) #{value.title}
+                dd  #{value.summary}
+            else
+                p There are no books by this author.
