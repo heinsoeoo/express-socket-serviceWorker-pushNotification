@@ -2,6 +2,7 @@ const publicVapidKey = "BC3ulBvtoMTwBGw6cbO5bpkz7-ma3jLBdY79M5Z2-b8bmNIh7IPecFnx
 var subObject;
 
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('Service Worker Installing');
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('/javascripts/sw.js')
         .then(function(reg) {
