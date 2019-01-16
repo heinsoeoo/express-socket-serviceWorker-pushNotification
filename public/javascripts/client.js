@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('/javascripts/sw.js')
         .then(function(reg) {
+            console.log('Registered Service Worker!');
+            console.log('Subscribing...');
             reg.pushManager.getSubscription().then(sub => {
                 if (sub === null) {
                     console.log('No Subscription');
