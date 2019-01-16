@@ -24,6 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             })
         }).catch(err => console.log("Service Worker Failed: "+err))
+    }else{
+        console.log('Service Worker Installation failed');
     }
 
     function urlBase64ToUint8Array(base64String) {
