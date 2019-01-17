@@ -6,7 +6,7 @@
 
 var app = require('../app');
 var debug = require('debug')('express-locallib-tuto:server');
-var https = require('https');
+var https = require('http');
 require('custom-env').env();
 var fs = require('fs');
 
@@ -29,7 +29,7 @@ app.set('port', port);
  * Create HTTP server.
  */
 
-var server = https.createServer(options, app);
+var server = https.createServer(app);
 const socket = require('../socket');
 const io = socket(server);
 

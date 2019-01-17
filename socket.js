@@ -10,7 +10,7 @@ module.exports = (server) => {
         socket.emit('init', {msg: 'connected'});
 
         socket.on('subscription', subObject => {
-            setInterval(() => {
+            setTimeout(() => {
                 webPush.sendNotification(
                     subObject,
                     JSON.stringify({message: 'Hi There! Testing Notification', url:process.env.APP_URL})
